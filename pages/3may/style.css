@@ -1,0 +1,78 @@
+:root {
+    --primary: #C9D6FF;
+    --secondary: #5DB9EE;
+    --third: #B5EAD7;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3C3C3C;
+}
+
+.spinner {
+    height: 250px;
+    width: 250px;
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 5px;
+    stroke-linecap: round;
+}
+
+svg {
+    animation: stroke 2.4s linear infinite, rotate 2.4s infinite linear, colorChange 7.2s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-90deg);
+    }
+
+    50% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(270deg);
+    }
+
+}
+
+@keyframes stroke {
+    0% {
+        stroke-dasharray: 1, 252;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 115, 252;
+        stroke-dashoffset: -125;
+    }
+
+    100% {
+        stroke-dasharray: 230, 252;
+        stroke-dashoffset: -251;
+    }
+}
+
+@keyframes colorChange {
+    0%, 100% {
+        stroke: var(--primary);
+    }
+
+    33% {
+        stroke: var(--secondary);
+    }
+    
+    66% {
+        stroke: var(--third);
+    }
+}
