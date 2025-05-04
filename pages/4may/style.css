@@ -36,6 +36,7 @@ button::after {
     width: 25px;
     height: 250px;
     background-image: linear-gradient(to bottom, #fcfcfc, #f1f1f1, #e7e7e7, #dcdcdc, #d2d2d2);
+    opacity: .7;
 }
 
 button:hover::after {
