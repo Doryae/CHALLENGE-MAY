@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulaire</title>
+</head>
+<body>
+    <section class="formulaire">
+        <form name="material-form">
+            <input type="text" name="lastname" placeholder="Nom" minlength="2" maxlength="25" required>
+            <label for="lastname">Nom</label>
+
+            <input type="text" name="firstname" placeholder="Prénom" minlength="3" max="20" required>
+            <label for="firstname">Prénom</label>
+
+            <input type="email" name="mail" placeholder="E-mail" required>
+            <label for="mail">E-mail</label>
+
+            <label for="subject">Sujet :</label>
+            <select name="subject" id="subject-select" required>
+                <option value="">— Choissisez une option —</option>
+                <option value="bug">Bug</option>
+                <option value="inquiries">Question</option>
+                <option value="other">Autre</option>
+            </select>
+
+            <label for="message">Votre requête :</label>
+            <textarea name="message" id="request" placeholder="Veuillez indiquer votre requête ici" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+</body>
+</html>

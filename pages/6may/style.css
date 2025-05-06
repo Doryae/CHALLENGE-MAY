@@ -1,0 +1,166 @@
+:root {
+    --primary: #3C3C3C;
+    --secondary: #A8B6C1;
+    --focus: #007ACC;
+    --valid: #A3D9A5;
+    --invalid: #8B2E2E;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(Inter-VariableFont_whgt.ttf);
+}
+
+/* soft reset */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", serif;
+    font-size: 20px;
+    color: var(--primary);
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+button, select {
+    border: none;
+    background: none;
+}
+
+textarea {
+    border: 2px solid transparent;
+    outline: none;
+}
+
+/* Page Styling */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulaire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    box-shadow: var(--secondary) 0px 0px 3px 1px;
+}
+
+input:first-of-type {
+    margin-top: 50px;
+}
+
+label, input, select, button, textarea {
+    display: flex;
+    max-width: 250px;
+}
+
+label:nth-of-type(1), label:nth-of-type(2), label:nth-of-type(3) {
+    position: relative;
+    cursor: text;
+    opacity: 0;
+}
+
+input {
+    margin-top: 15px;
+    border-bottom: 3px solid transparent;
+    transition: border-color .3s ease-in-out;
+}
+
+button, select {
+    box-shadow: var(--primary) 0px 0px 0px 1px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: box-shadow .2s ease;
+}
+
+button {
+    margin: auto;
+    transition: translateY .4s ease forwards;
+}
+
+button:hover, select:hover {
+    box-shadow: var(--focus) 0px 0px 0px 2px;
+}
+
+button:active {
+    transform: translateY(3px);
+}
+
+select, textarea, button {
+    margin-top: 15px;
+}
+
+select {
+    margin-bottom: 15px;
+}
+
+button {
+    margin-bottom: 50px;
+}
+
+
+/* States */
+
+input:focus, textarea:focus {
+    border-color: var(--focus);
+}
+
+input:focus+label {
+    animation: label .2s ease-out forwards;
+}
+
+input:valid, textarea:valid{
+    border-color: var(--valid);
+}
+
+input:valid+label {
+    animation: label .2s ease-out forwards;
+}
+
+input:invalid:not(:placeholder-shown), textarea:invalid:not(:placeholder-shown){
+    border-color: var(--invalid);
+}
+
+input:invalid:not(:placeholder-shown)+label {
+    animation: label .2s ease-out forwards;
+}
+
+input:invalid:focus, input:valid:focus, textarea:invalid:focus, textarea:valid:focus {
+    border-color: var(--focus);
+}
+
+input, textarea, select, button {
+    padding: 5px 15px;
+}
+
+select {
+    font-size: 16px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--secondary);
+}
+
+/* Animation */
+
+@keyframes label {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(20px, -60px);
+    }
+}
