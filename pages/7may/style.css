@@ -1,0 +1,96 @@
+@font-face {
+    font-family: "Poppins";
+    src: url(fonts/Poppins-Regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    color: #3c3c3c;
+}
+
+/* Content */
+
+.citation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+article {
+    width: 290px;
+    box-shadow: #3c3c3c55 0 0 3px 1px;
+    opacity: 1;
+}
+
+article p {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: justify;
+    font-size: .9rem;
+}
+
+article span {
+    display: block;
+    padding: 15px 0;
+    opacity: 0;
+}
+
+article cite {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+/* Text Appear Animation */
+
+.first {
+    animation: textAppear 2s ease-in-out forwards;
+}
+
+.second {
+    animation: textAppear 2s ease-in-out 2.2s forwards;
+}
+
+.third {
+    animation: textAppear 2s ease-in-out 4.4s forwards;
+}
+
+.fourth {
+    animation: textAppear 2s ease-in-out 6.6s forwards;
+}
+
+cite {
+    animation: textAppear 2s ease-in-out 8.8s forwards;
+}
+
+
+@keyframes textAppear {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .3
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* responsive */
+
+@media (max-width: 720px) {
+    * {
+        font-size: 16px;
+    }
+}
